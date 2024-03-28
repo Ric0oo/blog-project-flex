@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  background-color: rgba(219, 216, 219, 0.8352941176);
+  font-family: "arial", "sans-serif";
+  color: black;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+  max-width: 1000px;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-size: 2rem;
+  background-color: rgba(219, 216, 219, 0.8352941176);
+  box-shadow: 0 0 4px 0 #000;
+}
+
+.logo {
+  flex-basis: 200px;
+}
+.logo__image {
+  width: 100%;
+  display: block;
+  height: 100%;
+}
+
+.search {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .search {
+    flex-basis: 100%;
+    order: -1;
+  }
+}
+.search__input {
+  flex-basis: 60%;
+  height: 50%;
+  margin-right: 2vh;
+  padding: 0 10px;
+  font-size: 1.4rem;
+  max-height: 40px;
+  min-height: 30px;
+}
+.search__input:focus {
+  box-shadow: 0 0 2px 1px rgba(219, 216, 219, 0.8352941176);
+  font-weight: bold;
+}
+.search__btn {
+  font-size: 1.4rem;
+  height: 50%;
+  padding: 0 10px;
+  border: 2px solid black;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.4s;
+  max-height: 40px;
+  min-height: 30px;
+}
+.search__btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.settings {
+  display: flex;
+  padding: 0 50px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .settings {
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+}
+.settings__icon-link1 {
+  margin: 0 10px;
+  font-size: 3rem;
+  color: grey;
+}
+.settings__icon-link1:hover {
+  color: #009246;
+}
+.settings__icon-link2 {
+  margin: 0 10px;
+  font-size: 3rem;
+  color: grey;
+}
+.settings__icon-link2:hover {
+  color: #f2f2f2;
+}
+.settings__icon-link3 {
+  margin: 0 10px;
+  font-size: 3rem;
+  color: grey;
+}
+.settings__icon-link3:hover {
+  color: #ce2b37;
+}
+
+.menu {
+  flex-basis: 100%;
+  background-color: grey;
+  font-family: "pt sans", "roboto", "arial", "sans-serif";
+  height: 70px;
+  margin-top: 10px;
+  padding: 15px 50px 15px 80px;
+}
+.menu__list {
+  list-style: none;
+  display: flex;
+}
+.menu__item {
+  margin: 0 20px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  line-height: 4rem;
+}
+.menu__item:hover {
+  border-bottom: 2px black solid;
+}
+.menu__item:nth-last-child(1) {
+  margin-left: auto;
+  border: 2px solid #b5b5b5;
+  padding: 0 22px;
+}
+.menu__item:nth-last-child(1):hover {
+  border-color: #a62a2a;
+}
+.menu__item:nth-last-child(1) .menu__link {
+  padding: 0 22px;
+}
+.menu__link {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+.article {
+  padding: 30px 50px;
+  color: #333;
+  text-align: center;
+}
+.article--small {
+  padding: 20px 30px;
+}
+.article__image {
+  display: block;
+  width: 100%;
+}
+.article__title {
+  font-family: "pt sans", "roboto", "arial", "sans-serif";
+  text-transform: uppercase;
+  font-size: 3rem;
+  padding: 35px 0px 15px;
+}
+.article--small .article__title {
+  padding: 25px 0 10px;
+  font-size: 1.8rem;
+  background-color: rgba(219, 216, 219, 0.8352941176);
+}
+.article__introduction {
+  line-height: 1.6;
+  font-size: 1.6rem;
+}
+.article__btn {
+  display: block;
+  font-size: 1.8rem;
+  border: 2px solid black;
+  padding: 6px 12px;
+  margin: 10px 0;
+  width: 60%;
+  min-width: 200px;
+  margin: 10px auto;
+  text-decoration: none;
+  color: #000;
+}
+.article__btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.main-articles {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.main-articles__intro {
+  flex-basis: 100%;
+  padding: 10px 0;
+  background-color: rgba(124, 124, 124, 0.3019607843);
+  margin: 60px 0 30px;
+  text-align: center;
+  font-size: 4.4rem;
+  letter-spacing: 2px;
+}
+.main-articles .article {
+  flex-basis: 50%;
+}
+@media (max-width: 768px) {
+  .main-articles .article {
+    flex-basis: 100%;
+  }
+}
+
+.article-list {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.article-list .article {
+  flex-basis: 33%;
+}
+
+.footer {
+  flex-basis: 100%;
+  background-color: #b5b5b5;
+  display: flex;
+  justify-content: center;
+}
+.footer__copyright {
+  font-family: "pt sans", "roboto", "arial", "sans-serif";
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  padding: 10px 0;
+}/*# sourceMappingURL=main.css.map */

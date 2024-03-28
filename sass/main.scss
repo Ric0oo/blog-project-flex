@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+$main-color: #dbd8dbd5;
+
+$default-font: "arial", "sans-serif";
+$special-font: "pt sans", "roboto", "arial", "sans-serif";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  background-color: $main-color;
+  font-family: $default-font;
+  color: black;
+}
+
+.wrapper {
+  //kontener
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+  //pozycja
+  max-width: 1000px;
+  min-height: 100vh;
+  margin: 0 auto;
+  //wygląd
+  font-size: 2rem;
+  background-color: $main-color;
+  box-shadow: 0 0 4px 0 #000;
+}
+
+.logo {
+  flex-basis: 200px;
+
+  &__image {
+    width: 100%;
+    display: block;
+    height: 100%;
+  }
+}
+
+.search {
+  // elementem elastycznym
+  flex-grow: 1;
+  //kontenerem flexbox
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 768px) {
+    flex-basis: 100%;    
+    order: -1;
+  }
+  &__input {
+    flex-basis: 60%;
+    height: 50%;
+    margin-right: 2vh;
+    padding: 0 10px;
+    font-size: 1.4rem;
+    max-height: 40px;
+    min-height: 30px;
+    &:focus {
+      box-shadow: 0 0 2px 1px $main-color;
+      font-weight: bold;
+    }
+  }
+  &__btn {
+    font-size: 1.4rem;
+    height: 50%;
+    padding: 0 10px;
+    border: 2px solid black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.4s;
+    max-height: 40px;
+    min-height: 30px;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.settings {
+  display: flex;
+  padding: 0 50px;
+  align-items: center;
+  @media (max-width: 768px) {
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+  &__icon-link1 {
+    margin: 0 10px;
+    font-size: 3rem;
+    color: grey;
+    &:hover {
+      color: #009246;
+    }
+  }
+  &__icon-link2 {
+    margin: 0 10px;
+    font-size: 3rem;
+    color: grey;
+    &:hover {
+      color: #f2f2f2;
+    }
+  }
+  &__icon-link3 {
+    margin: 0 10px;
+    font-size: 3rem;
+    color: grey;
+    &:hover {
+      color: #ce2b37;
+    }
+  }
+}
+.menu {
+  flex-basis: 100%;
+  background-color: grey;
+  font-family: $special-font;
+  height: 70px;
+  margin-top: 10px;
+  padding: 15px 50px 15px 80px;
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+  &__item {
+    margin: 0 20px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    line-height: 4rem;
+    &:hover {
+      border-bottom: 2px black solid;
+    }
+    &:nth-last-child(1) {
+      margin-left: auto;
+      border: 2px solid #b5b5b5;
+      padding: 0 22px;
+      &:hover {
+        border-color: #a62a2a;
+      }
+      .menu__link {
+        padding: 0 22px;
+      }
+    }
+  }
+  &__link {
+    display: block;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.article {
+  padding: 30px 50px;
+  color: #333;
+  text-align: center;
+  &--small {
+    padding: 20px 30px;
+  }
+  &__image {
+    display: block;
+    width: 100%;
+  }
+  &__title {
+    font-family: $special-font;
+    text-transform: uppercase;
+    font-size: 3rem;
+    padding: 35px 0px 15px;
+    .article--small & {
+      padding: 25px 0 10px;
+      font-size: 1.8rem;
+      background-color: $main-color;
+    }
+  }
+  &__introduction {
+    line-height: 1.6;
+    font-size: 1.6rem;
+  }
+  &__btn {
+    display: block;
+    font-size: 1.8rem;
+    border: 2px solid black;
+    padding: 6px 12px;
+    margin: 10px 0;
+    width: 60%;
+    min-width: 200px;
+    margin: 10px auto;
+    text-decoration: none;
+    color: #000;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+.main-articles {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  &__intro {
+    flex-basis: 100%;
+    padding: 10px 0;
+    background-color: #7c7c7c4d;
+    margin: 60px 0 30px;
+    text-align: center;
+    font-size: 4.4rem;
+    letter-spacing: 2px;
+  }
+  .article {
+    flex-basis: 50%;
+    @media (max-width: 768px) {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.article-list {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  .article {
+    flex-basis: 33%;
+  }
+}
+
+.footer {
+  flex-basis: 100%;
+  background-color: #b5b5b5;
+  display: flex;
+  justify-content: center;
+  &__copyright {
+    font-family: $special-font;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    padding: 10px 0;
+  }
+}
